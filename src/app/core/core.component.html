@@ -1,0 +1,10 @@
+<app-titlebar></app-titlebar>
+<mat-sidenav-container>
+  <mat-sidenav #snav [mode]="'side'" [opened]="true">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
