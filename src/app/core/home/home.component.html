@@ -1,5 +1,4 @@
 <app-titlebar></app-titlebar>
-<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
 <mat-sidenav-container
   class="example-sidenav-container"
 >
@@ -14,16 +13,11 @@
         <mat-panel-title>
           Personal data
         </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <p>I'm visible because I am open</p>
-      </mat-nav-list>
-      <mat-nav-list>
-        <p>I'm visible because I am open</p>
-      </mat-nav-list>
+        <a mat-list-item href="..." *ngFor="let link of ['first link','second link','third link']"> {{ link }} </a>
+     </mat-nav-list>
+      
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -31,17 +25,41 @@
         <mat-panel-title>
           Self aware panel
         </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
       </mat-expansion-panel-header>
       <p>I'm visible because I am open</p>
     </mat-expansion-panel>
   </mat-accordion>
   </mat-sidenav>
-
   <mat-sidenav-content>
-    <p>this is the home page</p>
+    <div>Search Options</div>
+    <div>First Option</div>
+    <mat-form-field>
+            <input matInput placeholder="Invitation ID">
+    </mat-form-field>
+    <span>&nbsp;OR&nbsp;</span>
+    <mat-form-field>
+            <input matInput placeholder="Reference No">
+    </mat-form-field>
+    <span>&nbsp;OR&nbsp;</span>
+    <mat-form-field>
+            <input matInput placeholder="Loan Number">
+    </mat-form-field>
+    <div>Second Option</div>
+    <mat-form-field>
+            <input matInput placeholder="First Name">
+    </mat-form-field>
+    <label>+</label>
+    <mat-form-field>
+            <input matInput placeholder="Last Name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+            <input matInput placeholder="Zip Code">
+    </mat-form-field>
+    <span>&nbsp;OR&nbsp;</span>
+    <mat-form-field>
+            <input matInput placeholder="Date of Birth (dd/mm/yyyy)">
+    </mat-form-field>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <app-footer></app-footer>
